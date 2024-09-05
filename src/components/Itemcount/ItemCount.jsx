@@ -3,7 +3,7 @@ import './ItemCount.css'
 import { Button} from '../Button'
 import { ItemList} from '../ItemList'
 
-export const ItemCount = () => {
+export const ItemCount = ({addcart}) => {
     const [ count, setCount ] = useState(1)
     
 
@@ -25,6 +25,7 @@ return (
         <Button texto = '-' funcion ={restar}></Button> 
         <p>{count}</p>
         <Button texto = '+' funcion={sumar}></Button>   
+        <button texto = 'Agregar al carrito' onClick={()=>addcart(count)}>🛒</button>
     </div>
 )
 }

@@ -20,6 +20,8 @@ const saludo = "Bienvenidos a paper y tech, donde estan todos tus libros favorit
 
 // export default App
 import './App.css'
+import Cart from './components/Cart'
+import { CartContextProvider } from './components/CartContext'
 import ItemDetailContainer from './components/ItemDetailContainer'
 import {ItemListContainer} from './components/ItemListContainer'
 import {NavBar} from './components/NavBar'
@@ -30,18 +32,20 @@ export function App() {
 
   return (
     <>
+    <CartContextProvider>
+        <BrowserRouter>
+          <NavBar/>
+          <Routes>
+            <Route path='/' element={ <ItemListContainer greeting={saludo} />}/>
+            <Route path='/categoria/:categoria' element={ <ItemListContainer greeting={saludo} />}/>
+            <Route path='/detalle/:id' element={<ItemDetailContainer/>} />
+            <Route path='/Cart' element={<Cart/>} />
+            <Route path='/Checkout' element={<Checkout/>} />
+            <Route path='*' element={<h1>❌❌❌❌ERROR ESTA URL NO EXISTE INTENTALO DE NUEVO ❌❌❌❌</h1>} /> 
+          </Routes>
 
-    <BrowserRouter>
-      <NavBar/>
-      <Routes>
-        <Route path='/' element={ <ItemListContainer greeting={saludo} />}/>
-        <Route path='/categoria/:categoria' element={ <ItemListContainer greeting={saludo} />}/>
-        <Route path='/detalle/:id' element={<ItemDetailContainer/>} />
-        <Route path='*' element={<h1>❌❌❌❌ERROR ESTA URL NO EXISTE INTENTALO DE NUEVO ❌❌❌❌</h1>} /> 
-      </Routes>
-
-    </BrowserRouter>
-
+        </BrowserRouter>
+    </CartContextProvider>
 
     </>
   )

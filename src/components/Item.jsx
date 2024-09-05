@@ -14,11 +14,9 @@ return (
     <div className="most-read-books">
         <h3>{Book.nombre}</h3>
         <p>{Book.precio}</p>
-        <p>{Book.categoria}</p>
-        <Button texto ='Ver detalles' funcion={verdetalles}>
-        <Link to={'/detalle/'+ Book.id}>Ver detalles</Link> 
-        </Button>
-        {ver ? <ItemDetailContainer id = {Book.id}/> : <p>click aqui</p> }
+        <p>{Book.categoria}</p> 
+        {ver && <ItemDetailContainer id= {Book.id} /> }
+        <Link to={'/detalle/'+ Book.id}>Ir a la pagina de detalles</Link>
         <ItemCount/>
     </div>
 )
