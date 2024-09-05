@@ -26,7 +26,7 @@ import ItemDetailContainer from './components/ItemDetailContainer'
 import {ItemListContainer} from './components/ItemListContainer'
 import {NavBar} from './components/NavBar'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-
+import Checkout from './components/Checkout'
 
 export function App() {
 
@@ -40,7 +40,7 @@ export function App() {
             <Route path='/categoria/:categoria' element={ <ItemListContainer greeting={saludo} />}/>
             <Route path='/detalle/:id' element={<ItemDetailContainer/>} />
             <Route path='/Cart' element={<Cart/>} />
-            <Route path='/Checkout' element={<Checkout/>} />
+            <Route path='/checkout' element={<Checkout/>}/>
             <Route path='*' element={<h1>❌❌❌❌ERROR ESTA URL NO EXISTE INTENTALO DE NUEVO ❌❌❌❌</h1>} /> 
           </Routes>
 

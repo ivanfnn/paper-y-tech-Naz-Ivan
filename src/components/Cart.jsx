@@ -15,7 +15,7 @@ const {cart} = useContext (CartContext)
       )
     })}
     <button onClick={vaciarCart}>Vaciar carrito</button>
-    <Link to='/Checkout'>Terminar Compra </Link>
+    <Link to='/checkout'>Terminar Compra </Link>
     </div>
   )
 }

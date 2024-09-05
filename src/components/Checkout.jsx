@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
-import { CartContext } from '../context/CartContext'
 import { addDoc, collection } from 'firebase/firestore'
 import { bf } from '../servicios/firebase/firebaseconfig'
+import { CartContext } from './CartContext'
 
 
 const Checkout = () => {
@@ -10,15 +10,15 @@ const Checkout = () => {
     const [direccion, setDireccion] = useState("")
     const [order, setOrder] = useState({})
 
-    const {cart} = useContext (CartContext)
-
+    // const {cart} = useContext (CartContext)
+const {cart} = useContext (CartContext)
 
     const submit = async (element) => {
         element.preventDefault()
         const user = {
             nombre,
             mail,
-            direccion
+            direccion,
         }
         const data = {user, cart}
         const orderRef = collection(bf, "ordenes")
@@ -31,7 +31,7 @@ const Checkout = () => {
     
     console.log(order)
 
-  return (
+return (
     <div>
         <form onSubmit={(element)=>submit(element)}>
             <span>Nombre</span>
@@ -43,7 +43,7 @@ const Checkout = () => {
             <button type='submit'>Confirmar</button>
         </form>    
     </div>
-  )
+)
 }
 
 export default Checkout
