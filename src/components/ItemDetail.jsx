@@ -6,7 +6,7 @@ import Cart from './Cart'
 const ItemDetail = ({producto}) => {
     const {cart , setCart, addToCart} = useContext (CartContext)
     console.log(cart)
-const addcart = (cant) => {
+const addCart = (cant) => {
     const productoCantidad = {...producto, cant:cant}
     addToCart(productoCantidad)
 
@@ -18,7 +18,7 @@ return (
             <h3>{producto.nombre}</h3>
             <p>{producto.precio}</p>
             <p>{producto.detalle}</p>
-            <ItemCount addcart={addcart}/>
+            <ItemCount addCart ={addCart}/>
 
         </div>
 )
