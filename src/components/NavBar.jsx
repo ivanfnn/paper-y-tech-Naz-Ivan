@@ -10,19 +10,34 @@ import { CartContext } from "./CartContext";
 
 
 export const NavBar = () => {
+
+
+
+
     return (
-        <div>
+      <div>
         <nav className="navbar">
-            <div>
-            <Link className="link" to='/'>📖✏️</Link>
-            <Link  className="link" to='/categoria/ficcion'>Ficcion</Link>
-            <Link className="link" to='/categoria/no-ficcion' >No Ficcion</Link>
-            <Link className="link" to='/categoria/ciencia-ficcion' >Ciencia Ficcion</Link>
-            <Link className="link" to='/categoria/biografias' >Biografias</Link>
-            </div>
-            <Link><CartWidget /></Link>
+          <div>
+            <Link className="link" to="/">
+              📖✏️
+            </Link>
+            <Link className="link" to="/categoria/ficcion">
+              Ficcion
+            </Link>
+            <Link className="link" to="/categoria/no-ficcion">
+              No Ficcion
+            </Link>
+            <Link className="link" to="/categoria/ciencia-ficcion">
+              Ciencia Ficcion
+            </Link>
+            <Link className="link" to="/categoria/biografias">
+              Biografias
+            </Link>
+          </div>
+          <Link>
+            <CartWidget />
+          </Link>
         </nav>
-        
-        </div>
+      </div>
     );
-}
+  };
